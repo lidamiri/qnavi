@@ -1,0 +1,31 @@
+{
+  "name": "gridworld-demo",
+  "environment": "gridworld",
+  "agent": "q_learning",
+  "seed": 7,
+  "environment_params": {
+    "rows": 4,
+    "cols": 4,
+    "start": [0, 0],
+    "walls": [[1, 1]],
+    "goals": [[3, 3, 1.0]],
+    "step_reward": -0.04
+  },
+  "agent_params": {
+    "alpha": 0.5,
+    "gamma": 0.95
+  },
+  "exploration": {
+    "schedule": "exponential",
+    "start": 1.0,
+    "end": 0.05,
+    "decay": 0.99
+  },
+  "training": {
+    "episodes": 300,
+    "max_steps": 100,
+    "eval_every": 100,
+    "eval_episodes": 10,
+    "log_every": 100
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "taxi-expected-sarsa",
+  "environment": "taxi",
+  "agent": "expected_sarsa",
+  "seed": 7,
+  "environment_params": {},
+  "agent_params": {
+    "alpha": 0.3,
+    "gamma": 0.98
+  },
+  "exploration": {
+    "schedule": "linear",
+    "start": 1.0,
+    "end": 0.05,
+    "decay_steps": 20000
+  },
+  "training": {
+    "episodes": 6000,
+    "max_steps": 200,
+    "eval_every": 500,
+    "eval_episodes": 50,
+    "checkpoint_every": 0,
+    "log_every": 1000,
+    "solve_threshold": 8.0,
+    "solve_window": 100
+  }
+}

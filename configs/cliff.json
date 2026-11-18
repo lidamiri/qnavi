@@ -1,0 +1,33 @@
+{
+  "name": "cliff-walking",
+  "environment": "cliff",
+  "agent": "q_learning",
+  "seed": 7,
+  "environment_params": {
+    "rows": 4,
+    "cols": 12,
+    "step_reward": -1.0,
+    "cliff_reward": -100.0,
+    "slip_probability": 0.0
+  },
+  "agent_params": {
+    "alpha": 0.5,
+    "gamma": 1.0
+  },
+  "exploration": {
+    "schedule": "inverse",
+    "start": 1.0,
+    "end": 0.01,
+    "decay": 0.002
+  },
+  "training": {
+    "episodes": 800,
+    "max_steps": 300,
+    "eval_every": 100,
+    "eval_episodes": 10,
+    "checkpoint_every": 0,
+    "log_every": 200,
+    "solve_threshold": -20.0,
+    "solve_window": 50
+  }
+}

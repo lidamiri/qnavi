@@ -1,0 +1,37 @@
+{
+  "name": "default-grid",
+  "environment": "gridworld",
+  "agent": "q_learning",
+  "seed": 7,
+  "environment_params": {
+    "rows": 6,
+    "cols": 6,
+    "start": [0, 0],
+    "walls": [[1, 1], [1, 2], [2, 4], [3, 1], [4, 1], [4, 2], [4, 4]],
+    "goals": [[5, 5, 1.0], [0, 5, -1.0]],
+    "step_reward": -0.04,
+    "bump_penalty": -0.1,
+    "slip_probability": 0.0
+  },
+  "agent_params": {
+    "alpha": 0.2,
+    "gamma": 0.95,
+    "initial_value": 0.0
+  },
+  "exploration": {
+    "schedule": "exponential",
+    "start": 1.0,
+    "end": 0.05,
+    "decay": 0.998
+  },
+  "training": {
+    "episodes": 3000,
+    "max_steps": 200,
+    "eval_every": 250,
+    "eval_episodes": 25,
+    "checkpoint_every": 1000,
+    "log_every": 500,
+    "solve_threshold": 0.9,
+    "solve_window": 100
+  }
+}

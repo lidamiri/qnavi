@@ -1,0 +1,36 @@
+{
+  "name": "gridworld-8x8",
+  "environment": "gridworld",
+  "agent": "q_learning",
+  "seed": 7,
+  "environment_params": {
+    "rows": 8,
+    "cols": 8,
+    "start": [0, 0],
+    "walls": [[1, 2], [2, 2], [3, 2], [3, 3], [3, 4], [5, 1], [5, 2], [5, 5], [5, 6], [6, 5], [2, 6], [1, 6]],
+    "goals": [[7, 7, 1.0], [0, 7, -1.0], [6, 0, -1.0]],
+    "step_reward": -0.02,
+    "bump_penalty": -0.05,
+    "slip_probability": 0.1
+  },
+  "agent_params": {
+    "alpha": 0.1,
+    "gamma": 0.97
+  },
+  "exploration": {
+    "schedule": "linear",
+    "start": 1.0,
+    "end": 0.02,
+    "decay_steps": 4000
+  },
+  "training": {
+    "episodes": 4000,
+    "max_steps": 300,
+    "eval_every": 500,
+    "eval_episodes": 50,
+    "checkpoint_every": 0,
+    "log_every": 1000,
+    "solve_threshold": 0.85,
+    "solve_window": 100
+  }
+}
